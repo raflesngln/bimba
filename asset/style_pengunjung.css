@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+#bodi{
+	width:900px;
+	height:550px;
+	overflow:hidden;
+	background:#808080;
+	box-shadow:0px 0px 20px white;
+	margin-top:30px;
+
+}
+#tombol1{
+	width:200px;
+	font-size:14px;
+	padding:3px 10px;
+	background:#00BFFF;
+	box-shadow:0px 0px 10px black;
+}
+#tombol2{
+	width:200px;
+	font-size:14px;
+	padding:3px 10px;
+	background:#F00;
+	box-shadow:0px 0px 10px black;
+	
+}
+
+.tombol{
+	width:50px;
+	font-family:"Times New Roman", Times, serif;
+	font-size:25px;
+	box-shadow:0px 0px 5px black;
+	border-radius:5px;
+	text-decoration:none;
+	color:#EEE;
+	padding-left:35px;
+	padding-right:35px;
+	background:#003333;
+}
