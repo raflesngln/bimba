@@ -1,12 +1,53 @@
-<table width="718" align="center" border="1" cellspacing="4" cellpadding="4">
+<style>
+table tr td{
+	border-bottom:1px #CCC solid;
+}
+table tr:hover{
+	background-color:#B7FFFF;
+}
+.boxheader{
+	padding-left:40px;
+	}
+.boxheader .cmbstatus{
+	border:1px #CCC solid;
+	height:30px;
+	}
+	
+.box1{
+	float:left;
+		margin-bottom:20px;
+		width:20%;
+	}
+	.box2{
+		float:right;
+		width:70%;
+		text-align:right;
+		margin-bottom:20px;
+}
+button,.submit{
+	background:#0080C0;
+	color:#FFF;
+	border:0px;
+	border-radius:4px;
+	height:30px;
+	cursor:pointer;
+}
+button:hover{
+	background-color:#2DBBFF;
+}
+.submit:hover{
+	background-color:#2DBBFF;
+}
+</style>
+<table width="98%" align="center" cellspacing="4" cellpadding="4">
 <tr>
-    <td colspan="21" align="center" bgcolor="#CCCCCC"><h2>DATA MATERI BIMBA AIUEO SUKASARI</h2></td>
+    <td colspan="21" align="center"><h2>DATA MATERI BIMBA AIUEO SUKASARI</h2></td>
   </tr>
   <tr>
-    <td height="34" colspan="7"><div align="left"><a href="?page=tambah materi">Tambah materi</a></div></td>
+    <td height="34" colspan="7"><div align="left"><a href="?page=tambah materi"><button><i class="fa fa-plus"></i>Tambah materi</button></a><br /><br /></a></div></td>
   </tr>
-  <tr bgcolor="#00BFFF">
-    <td width="116">id materi</td>
+  <tr bgcolor="#E9E9E9">
+    <td width="116" height="51">id materi</td>
     <td width="107">tgl input</td>
     <td width="106">materi</td>
     <td width="99">admin</td>

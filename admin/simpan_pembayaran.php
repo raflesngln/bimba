@@ -19,7 +19,7 @@ if($_POST['nom']<600000){
 $str=mysql_query("select * from siswa where nis='$_POST[nis]'");
 $dt_siswa=mysql_fetch_array($str);
 
-$simpan=mysql_query("insert into pembayaran values('','$tgl','$_POST[nis]','$_POST[nom]','$dt_siswa[id_level]','$_SESSION[id_admin]')");
+$simpan=mysql_query("insert into pembayaran values('','$tgl','$_POST[nis]','$_POST[nom]','$dt_siswa[id_level]','$_SESSION[id_admin]','$_POST[status]')");
 if($simpan){
 ?>
 <script>

@@ -40,6 +40,8 @@
 				break;
 				case"daftar_nilai":include"daftar_nilai.php";
 				break;
+				case"daftar_siswa":include"data_siswa.php";
+				break;
 				default: include"beranda.php";
 				break;	
 			}

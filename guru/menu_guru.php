@@ -12,14 +12,15 @@
     <td bgcolor="#999933" align="center"><a style="text-decoration:none; color:rgb(238,238,238);" href="?page=jadwal">JADWAL</a></td>
   </tr>
   <tr>
-    <td bgcolor="#999933" align="center"><a style="text-decoration:none; color:rgb(238,238,238);" href="?page=nilai">input NILAI</a></td>
+    <td bgcolor="#999933" align="center"><a style="text-decoration:none; color:rgb(238,238,238);" href="?page=nilai">INPUT NILAI</a></td>
   </tr>
   <tr>
-    <td bgcolor="#999933" align="center"><a style="text-decoration:none; color:rgb(238,238,238);" href="?page=daftar_nilai">daftar NILAI</a></td>
+    <td bgcolor="#999933" align="center"><a style="text-decoration:none; color:rgb(238,238,238);" href="?page=daftar_nilai">DAFTAR NILAI</a></td>
   </tr>
     <tr>
-    <td bgcolor="#999933" align="center"><a style="text-decoration:none; color:rgb(238,238,238);" href="?page=daftar_nilai">daftar Siswa</a></td>
+    <td bgcolor="#999933" align="center"><a style="text-decoration:none; color:rgb(238,238,238);" href="?page=daftar_siswa">DAFTAR SISWA</a></td>
   </tr>
+
     <tr>
     <td bgcolor="#999933" align="center"><a style="text-decoration:none; color:rgb(238,238,238);" href="?page=password">Ganti Password</a></td>
   </tr>

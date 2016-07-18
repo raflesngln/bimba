@@ -46,6 +46,14 @@ function GetNama(){
     <td>Nominal Bayar</td>
     <td><input type="number" min="0" name="nom" /></td>
   </tr>
+  <tr>
+    <td>Status</td>
+    <td><select name="status" id="status" required onchange="GetNama()">
+      <option value="">Pilih status</option>
+<option value="LUNAS">LUNAS</option>
+<option value="BELUM_LUNAS">BELUM_LUNAS</option>
+    </select></td>
+  </tr>
    <tr>
     <td><input type="submit" value="SIMPAN" /></td>
     <td><input type="reset" value="BATAL" onClick="location=('?page=pembayaran')" /></td>
