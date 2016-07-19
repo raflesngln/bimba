@@ -6,6 +6,9 @@
 <title>Menu guru || bIMBA AIUEO</title>
 <link rel="shortcut icon" href="../logo/favicon.png" />
 <link rel="stylesheet" href="../asset/style-guru.css" />
+<script language="javascript" src="../asset/jquery/jquery.js"></script>
+<link href="../asset/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+
 </head>
 
 <body background="../logo/back2 copy.jpg">
@@ -41,6 +44,8 @@
 				case"daftar_nilai":include"daftar_nilai.php";
 				break;
 				case"daftar_siswa":include"data_siswa.php";
+				break;
+				case"detail_nilai":include"detail_nilai.php";
 				break;
 				default: include"beranda.php";
 				break;	

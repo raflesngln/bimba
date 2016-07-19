@@ -72,10 +72,10 @@ button:hover{
 <div id="boxtabel">
 <table width="99%" cellpadding="2" align="center" cellspacing="3" border="0">
 <tr bgcolor="#E9E9E9">
-    <td width="98" height="41"><div align="center">Nis</div></td>
-    <td width="171"><div align="center">Nama</div></td>
-    <td width="109"><div align="center">Nilai</div></td>
-    <td width="136"><div align="center">Grade</div></td>
+    <td width="109" height="41"><div align="center">Nis</div></td>
+    <td width="190"><div align="">Nama</div></td>
+    <td width="167"><div align="center">Nilai Total</div></td>
+    <td width="76">Actions</td>
     </tr>
   <?php
 if(isset($_GET['hal'])){
@@ -85,27 +85,31 @@ $hal=1;
 }
 $max=25;
 $dari=($hal*$max)-$max;
-  
+
 
 	  
-$str=mysql_query("select * from nilai
-left join siswa on nilai.nis=siswa.nis
-inner join materi on nilai.id_materi=materi.id_materi
+$str=mysql_query("select *,
+(SELECT SUM(d.jumlah_nilai) from nilai d) as jml
+	from nilai a
+	left join siswa b on a.nis=b.nis
+	inner join materi c on a.id_materi=c.id_materi
+	GROUP BY a.nis
  limit $dari,$max");
  
 while($dt_siswa=mysql_fetch_array($str)){
 ?>
   <tr>
-    <td><div align=""><?php echo $dt_siswa[0]; ?></div></td>
+    <td><div align=""><?php echo $dt_siswa['nis']; ?></div></td>
     <td><div align=""><?php echo $dt_siswa['nm_siswa']; ?></div></td>
-    <td><div align="center"><?php echo $dt_siswa['jumlah_nilai']; ?></div></td>
-    <td><div align="center"><?php echo $dt_siswa['grade']; ?></div></td>
+    <td><div align="center"><?php echo $dt_siswa['jml']; ?></div></td>
+    <td><div align="center"><a href="index.php?page=detail_nilai&nis=<?php echo $dt_siswa['nis'];  ?>"><i class="fa fa-eye"></i> Detail</a></div></td>
     </tr>
   
 <?php
 }
 
 ?>
+<br />
 <tr>
 <td height="50" align="" colspan="7">
 <?php
