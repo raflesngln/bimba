@@ -4,7 +4,7 @@
     <td colspan="2"><div align="center">FORM DATA INPUT MATERI</div></td>
   </tr>
   <tr>
-    <td width="131" height="45">Level Materi</td>
+    <td width="131" height="30">Level Materi</td>
     <td width="341"><select name="level" required >
     	<option value="">.:: pilih level materi ::.</option>
         <?php
@@ -16,7 +16,7 @@
     </select></td>
   </tr>
   <tr>
-    <td height="46">Materi</td>
+    <td height="30">Nama Materi</td>
     <td><input type="text" name="materi" required /></td>
   </tr>
   <tr>

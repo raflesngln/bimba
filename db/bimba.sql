@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2016 at 03:51 AM
+-- Generation Time: Jul 24, 2016 at 08:27 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -166,14 +166,14 @@ CREATE TABLE IF NOT EXISTS `materi` (
   `id_admin` int(11) NOT NULL,
   `id_level` int(11) NOT NULL,
   PRIMARY KEY (`id_materi`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16062644 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16072456 ;
 
 --
 -- Dumping data for table `materi`
 --
 
 INSERT INTO `materi` (`id_materi`, `tgl_input`, `materi`, `id_admin`, `id_level`) VALUES
-(16061915, '2016-06-19', 'Baca 1', 1, 1),
+(16061915, '2016-06-19', 'Baca 11', 1, 1),
 (16062122, '2016-06-21', 'Tulis 2', 1, 2),
 (16062235, '2016-06-22', 'Hitung 1', 1, 1),
 (16062643, '2016-06-26', 'M1', 1, 1);
@@ -185,7 +185,7 @@ INSERT INTO `materi` (`id_materi`, `tgl_input`, `materi`, `id_admin`, `id_level`
 --
 
 CREATE TABLE IF NOT EXISTS `nilai` (
-  `id_nilai` varchar(15) NOT NULL,
+  `id_nilai` int(11) NOT NULL AUTO_INCREMENT,
   `tgl_input` date NOT NULL,
   `nip` varchar(15) NOT NULL,
   `nis` varchar(12) NOT NULL,
@@ -195,14 +195,16 @@ CREATE TABLE IF NOT EXISTS `nilai` (
   `grade` char(2) NOT NULL,
   `catatan` text NOT NULL,
   PRIMARY KEY (`id_nilai`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 --
 -- Dumping data for table `nilai`
 --
 
 INSERT INTO `nilai` (`id_nilai`, `tgl_input`, `nip`, `nis`, `id_level`, `id_materi`, `jumlah_nilai`, `grade`, `catatan`) VALUES
-('984160626285', '2016-06-26', '9841606212', '1606243', '1', '16061915', 90, 'A', 'Ayo semangat terus ya dek...');
+(36, '2016-07-24', '9841606212', '1606244', '1', '16061915', 55, 'C', 'lebih rajin lagi belajar ya '),
+(37, '2016-07-24', '9841606212', '1606244', '1', '16062643', 77, 'B', ''),
+(38, '2016-07-24', '16062122', '1606244', '2', '16062643', 80, 'B', '');
 
 -- --------------------------------------------------------
 
@@ -219,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `pembayaran` (
   `id_admin` int(11) NOT NULL,
   `status_bayar` enum('BELUM_LUNAS','LUNAS') NOT NULL,
   PRIMARY KEY (`id_bayar`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `pembayaran`
@@ -265,8 +267,8 @@ CREATE TABLE IF NOT EXISTS `siswa` (
 --
 
 INSERT INTO `siswa` (`nis`, `nm_siswa`, `tmptlahir_siswa`, `tgllahir_siswa`, `jns_kel`, `agama`, `alamat`, `foto`, `nm_ayah`, `agama_ayah`, `krj_ayah`, `no_ayah`, `nm_ibu`, `agama_ibu`, `krj_ibu`, `no_ibu`, `id_level`, `id_admin`, `status`) VALUES
-('1606243', 'candra dwi putra', 'Tanagerang', '2011-04-05', 'laki-laki', 'Islam', 'Jl. SUkamanah Tangerang', 'candra.jpg', 'Sulaiman', 'Islam', 'karyawan', '0897876765', 'Supani', 'Islam', 'IRT', '089799998687', 1, 1, 'aktif'),
-('1606244', 'Rahutomo11', 'Tangerang', '2011-03-02', 'laki-laki', 'Islam', 'Jl. Dmyanti', 'RAhutomo.jpg', 'anjar', 'Islam', 'PNS', '08712345667', 'Tania', 'Islam', 'IRT', '089776787655', 1, 1, 'lulus'),
+('1606243', 'candra dwi putra', 'Tanagerang', '2011-04-05', 'laki-laki', 'Islam', 'Jl. SUkamanah Tangerang', 'candra.jpg', 'Sulaiman', 'Islam', 'karyawan', '0897876765', 'Supani', 'Islam', 'IRT', '089799998687', 2, 1, 'aktif'),
+('1606244', 'Rahutomo11', 'Tangerang', '2011-03-02', 'laki-laki', 'Islam', 'Jl. Dmyanti', 'RAhutomo.jpg', 'anjar', 'Islam', 'PNS', '08712345667', 'Tania', 'Islam', 'IRT', '089776787655', 1, 1, 'aktif'),
 ('1606263', 'aa', 'tangerang', '2011-01-02', 'laki-laki', 'Islam', 'tangerang', 'bl.jpg', 'samsudin', 'Islam', 'karyawan swasta', '08990809', 'Supani', 'Islam', 'karyawan swasta', '00980989', 1, 1, 'aktif'),
 ('1607164', 'budi', 'dki', '2007-02-10', 'laki-laki', 'Islam', 'lorem ispujm dolorl istgv amet', 'abstract_colorful_design_vector_background_art_267245.jpg', 'santo', 'Islam', 'wirasawa', '089898', 'yani', 'Islam', 'wrswasartga', '98292', 2, 3, 'aktif');
 

@@ -1,5 +1,9 @@
 <script src="../asset/js/jquery-1.8.2.min.js"></script>
 <style>
+table tr td{
+	border-bottom:1px #CCC solid;
+}
+
 .boxheader{
 	padding-left:40px;
 	}

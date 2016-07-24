@@ -1,5 +1,9 @@
 <script src="../asset/js/jquery-1.8.2.min.js"></script>
 <style>
+table tr td{
+	border-bottom:1px #CCC solid;
+}
+
 .boxheader{
 	padding-left:40px;
 	}
@@ -41,29 +45,7 @@ button:hover{
 <h2 align="center">DATA SISWA </h2>
 
 <div id="boxheader" class="boxheader">
-  <div class="box2">
-    <form action="laporan/laporan_siswa.php" method="post" target="new">
-
-<span>LEVEL</span>
-<select name="level" class="cmbstatus"  id="level" onChange="sorting()">
- <option value="semua">Semua Level</option>
- <option value="1">1</option>
- <option value="2">2</option>
-  <option value="3">3</option>
-   <option value="4">4</option>
- </select>
- 
- <span> &nbsp;  STATUS</span>
-<select name="cmbstatus" class="cmbstatus"  id="cmbstatus" onChange="sorting()">
- <option value="semua">Semua status</option>
- <option value="aktif">AKTIF</option>
- <option value="non aktif">NONAKTIF</option>
- <option value="lulus">LULUS</option>
- </select>
- <button class="submit" type="submit"><i class="fa fa-print"></i> Cetak</button>
- </form>
- 
- </div>
+  
 
 </div>
 

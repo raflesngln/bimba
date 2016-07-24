@@ -6,6 +6,8 @@
 <title>Menu Siswa || bIMBA AIUEO</title>
 <link rel="shortcut icon" href="../logo/favicon.png" />
 <link rel="stylesheet" href="../asset/style-siswa.css" />
+<script src="../asset/js/jquery-1.8.2.min.js"></script>
+
 </head>
 
 <body background="../logo/backkuning.jpg">

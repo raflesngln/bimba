@@ -1,46 +1,57 @@
 <?php session_start();
 include"../koneksi/koneksi.php";
 $tgl=date('Y/m/d');
-$baca=$_POST['baca'];
-$tulis=$_POST['tulis'];
-$hitung=$_POST['hitung'];
-$hasil=($baca+$tulis+$hitung)/3;
-$nip=$_SESSION['nip-guru'];
+$level=$_POST['level'];
+$guru=$_POST['guru'];
+$siswa=$_POST['siswa'];
 
-
-if($hasil>85){
-	$gread="A";	
-}else if($hasil>75){
-	$gread="B";
-}else if($hasil>65){
-	$gread="C";	
-}else if($hasil>55){
-	$gread="D";	
-}else{
-	$gread="E";	
-}
-
-$str=mysql_query("select * from siswa where nis='$_POST[nis]'");
-$dt_siswa=mysql_fetch_array($str);
+$materi=$_POST['materi'];
 $no="984".date('ymd').rand(99,999);
-$simpan=mysql_query("insert into nilai values('$no','$tgl','$nip','$_POST[nis]','$dt_siswa[id_level]',
-											'$baca','$tulis','$hitung','$hasil','$gread','$_POST[catatan]')");
-if($simpan){
-	echo"
-	<script>
-	alert('berhasil menyimpan nilai');
-	document.location='http://localhost/bimba/guru/?page=nilai';
-	</script>
-	";
-	
-}else{
-		echo"
-	<script>
-	alert('gagal menyimpan nilai');
-	document.location='http://localhost/bimba/guru/?page=nilai';
-	</script>
-	";
-	
-}
+
+	foreach($materi as $key => $val){
+   		$n_materi =$_POST['materi'][$key];
+		$n_nilai=$_POST['nilai'][$key];
+		$n_grade =$_POST['grade'][$key];
+		$n_ket =$_POST['ket'][$key];
+		
+		if($n_nilai > 0 && $n_nilai <=59){
+			$grade='C';
+		} else if($n_nilai >59 && $n_nilai <=79){
+			$grade='B';
+		} else if($n_nilai >79 && $n_nilai <=100){
+			$grade='A';
+		}
+		
+		$cari=mysql_query("select * from nilai where id_materi='$n_materi' AND nis='$siswa'");
+		$jum_data=mysql_num_rows($cari);
+		
+		if($jum_data >=1){
+			// jika ada materi dan nis sama dgn yg diinput hapus semua nis dan materi yg sma dgn inputan dari nilai lalu insert baru
+			$hapus=mysql_query("delete from nilai where id_materi='$n_materi' AND id_level='$level' AND nis='$siswa'");
+			$simpan=mysql_query("insert into nilai values('','$tgl','$guru','$siswa','$level',
+											'$n_materi','$n_nilai','$grade','$n_ket')");
+					echo"
+					<script>
+					alert('berhasil Update nilai');
+					document.location='http://localhost/bimba/guru/?page=nilai';
+					</script>
+					";
+			
+		} else {
+			//jika ga ada ktemu di nilai insert baru
+			$simpan=mysql_query("insert into nilai values('','$tgl','$guru','$siswa','$level',
+											'$n_materi','$n_nilai','$grade','$n_ket')");	
+							echo"
+			<script>
+			alert('Data menyimpan nilai');
+			document.location='http://localhost/bimba/guru/?page=nilai';
+			</script>
+			";
+		
+		}
+		
+
+	}
+
 
 ?>

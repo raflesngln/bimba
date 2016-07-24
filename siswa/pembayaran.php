@@ -32,7 +32,7 @@ while($dt_pembayaran=mysql_fetch_array($str)){
 		$status="LUNAS";	
 	}
 	?>
-    <td><?php echo $status; ?></td>
+    <td><?php echo $dt_pembayaran['status_bayar'];  ?></td>
     <td> <?php echo $dt_pembayaran[1];  ?></td>
     <td><?php echo $dt_pembayaran['jatuh'];  ?></td>
 	<td>cetak</td>

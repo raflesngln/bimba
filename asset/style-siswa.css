@@ -28,10 +28,8 @@
 }
 #konten{
 	width:72%;
-	height:600px;
-	overflow:scroll;
-	background-image:url(../logo/bynganair2%20copy.jpg);
-	border:solid 40px #FF3;/* ini warna didlam dekat gambar air*/
+	height:auto;
+
 }
 #footer{
 	margin-top:5px;

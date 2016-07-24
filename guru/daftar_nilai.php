@@ -1,5 +1,9 @@
 <script src="../asset/js/jquery-1.8.2.min.js"></script>
 <style>
+table tr td{
+	border-bottom:1px #CCC solid;
+}
+
 .boxheader{
 	padding-left:40px;
 	}
@@ -40,44 +44,23 @@ button:hover{
 
 <h2 align="center">DATA NILAI SISWA</h2>
 
-<div id="boxheader" class="boxheader">
-  <div class="box2">
-    <form action="laporan/laporan_siswa.php" method="post" target="new">
 
-<span>LEVEL</span>
-<select name="level" class="cmbstatus"  id="level" onChange="sorting()">
- <option value="semua">Semua Level</option>
- <option value="1">1</option>
- <option value="2">2</option>
-  <option value="3">3</option>
-   <option value="4">4</option>
- </select>
- 
- <span> &nbsp;  STATUS</span>
-<select name="cmbstatus" class="cmbstatus"  id="cmbstatus" onChange="sorting()">
- <option value="semua">Semua status</option>
- <option value="aktif">AKTIF</option>
- <option value="non aktif">NONAKTIF</option>
- <option value="lulus">LULUS</option>
- </select>
- <button class="submit" type="submit"><i class="fa fa-print"></i> Cetak</button>
- </form>
- 
- </div>
-
-</div>
 
 <br style="clear:both" />
 
 <div id="boxtabel">
 <table width="99%" cellpadding="2" align="center" cellspacing="3" border="0">
 <tr bgcolor="#E9E9E9">
-    <td width="109" height="41"><div align="center">Nis</div></td>
-    <td width="190"><div align="">Nama</div></td>
-    <td width="167"><div align="center">Nilai Total</div></td>
-    <td width="76">Actions</td>
+  <td width="30">No</td>
+    <td width="80" height="41"><div align="center">Nis</div></td>
+    <td width="73"><div align="">Nama</div></td>
+    <td width="76"><div align="center">Nilai Total</div></td>
+    <td width="84">Level Aktif</td>
+    <td width="84">Status</td>
+    <td width="94">Actions</td>
     </tr>
   <?php
+  $no=1;
 if(isset($_GET['hal'])){
 $hal=$_GET['hal'];	
 }else{
@@ -86,8 +69,6 @@ $hal=1;
 $max=25;
 $dari=($hal*$max)-$max;
 
-
-	  
 $str=mysql_query("select *,
 (SELECT SUM(d.jumlah_nilai) from nilai d) as jml
 	from nilai a
@@ -99,19 +80,22 @@ $str=mysql_query("select *,
 while($dt_siswa=mysql_fetch_array($str)){
 ?>
   <tr>
+    <td><?php echo $no; ?></td>
     <td><div align=""><?php echo $dt_siswa['nis']; ?></div></td>
     <td><div align=""><?php echo $dt_siswa['nm_siswa']; ?></div></td>
-    <td><div align="center"><?php echo $dt_siswa['jml']; ?></div></td>
+    <td><div align="center"><?php echo $dt_siswa['alamat']; ?></div></td>
+    <td><div align="center"><?php echo $dt_siswa['id_level']; ?></div></td>
+    <td><?php echo $dt_siswa['status']; ?></td>
     <td><div align="center"><a href="index.php?page=detail_nilai&nis=<?php echo $dt_siswa['nis'];  ?>"><i class="fa fa-eye"></i> Detail</a></div></td>
     </tr>
   
-<?php
+<?php $no++;
 }
 
 ?>
 <br />
 <tr>
-<td height="50" align="" colspan="7">
+<td height="50" align="" colspan="10">
 <?php
 $str2=mysql_query("select * from nilai left join siswa
 on nilai.nis=siswa.nis
